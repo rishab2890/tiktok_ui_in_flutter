@@ -32,16 +32,18 @@ class _MainState extends State<Main> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          //top part
-          topPart,
-          //middle part
-          middlePart,
-          //bottom part
-          BottomToolbar(),
-        ],
+    return MaterialApp(
+      home: Scaffold(
+        body: Column(
+          children: [
+            //top part
+            topPart,
+            //middle part
+            middlePart,
+            //bottom part
+            BottomToolbar(),
+          ],
+        ),
       ),
     );
   }
