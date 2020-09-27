@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tiktok_ui/widgets/video_description.dart';
+import 'package:tiktok_ui/widgets/actions_toolbar.dart';
+import 'package:tiktok_ui/widgets/bottom_toolbar.dart';
 
 void main() {
   runApp(Main());
@@ -21,59 +24,12 @@ class _MainState extends State<Main> {
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            videoDescription,
-            actionsToolbar,
+            VideoDescription(),
+            ActionsToolbar(),
           ],
         ),
       );
 
-  Widget get bottomPart => Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: List<Widget>.generate(
-          5,
-          (index) => Container(
-            width: 40.0,
-            height: 40.0,
-            color: Colors.purple[300],
-          ),
-        ),
-      );
-
-  Widget get videoDescription => Expanded(
-          child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-              height: 10.0,
-              color: Colors.green[300],
-              margin: EdgeInsets.only(top: 10)),
-          Container(
-              height: 10.0,
-              color: Colors.green[300],
-              margin: EdgeInsets.only(top: 10)),
-          Container(
-              height: 10.0,
-              color: Colors.green[300],
-              margin: EdgeInsets.only(top: 10))
-        ],
-      ));
-
-  Widget get actionsToolbar => Container(
-        width: 100.0,
-        color: Colors.red[300],
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: List<Widget>.generate(
-              5,
-              (index) => Container(
-                    width: 60.0,
-                    height: 60.0,
-                    color: Colors.blue[300],
-                    margin: EdgeInsets.only(top: 20.0),
-                  )),
-        ),
-      );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,7 +40,7 @@ class _MainState extends State<Main> {
           //middle part
           middlePart,
           //bottom part
-          bottomPart,
+          BottomToolbar(),
         ],
       ),
     );
